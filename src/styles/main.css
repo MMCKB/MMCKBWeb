@@ -588,3 +588,150 @@ html {
   @apply text-sm text-(--text-secondary) text-center mb-2;
 }
 
+/* ============================================
+ * Glassmorphism 毛玻璃风格
+ * 在壁纸 overlay 模式下为卡片、导航栏、按钮等
+ * 添加统一的 backdrop-filter 模糊与半透明边框
+ * ============================================ */
+
+/* 玻璃拟态基础变量 */
+:root {
+  --glass-border-light: rgba(255, 255, 255, 0.38);
+  --glass-border-dark: rgba(255, 255, 255, 0.12);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --glass-shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* Overlay 透明壁纸模式下的玻璃卡片 */
+body.wallpaper-transparent .card-base,
+body.wallpaper-transparent .card-base-transparent {
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  background: rgba(255, 255, 255, 0.52) !important;
+  border: 1px solid var(--glass-border-light);
+  box-shadow: var(--glass-shadow);
+}
+
+:root.dark body.wallpaper-transparent .card-base,
+:root.dark body.wallpaper-transparent .card-base-transparent {
+  background: rgba(30, 30, 30, 0.52) !important;
+  border: 1px solid var(--glass-border-dark);
+  box-shadow: var(--glass-shadow-dark);
+}
+
+/* 按钮、下拉菜单、浮动面板玻璃化 */
+body.wallpaper-transparent .btn-card,
+body.wallpaper-transparent .dropdown-content,
+body.wallpaper-transparent .float-panel,
+body.wallpaper-transparent .bg-\(--card-bg\),
+body.wallpaper-transparent .post-list-layout-switch {
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  background: rgba(255, 255, 255, 0.42) !important;
+  border: 1px solid var(--glass-border-light);
+}
+
+:root.dark body.wallpaper-transparent .btn-card,
+:root.dark body.wallpaper-transparent .dropdown-content,
+:root.dark body.wallpaper-transparent .float-panel,
+:root.dark body.wallpaper-transparent .bg-\(--card-bg\),
+:root.dark body.wallpaper-transparent .post-list-layout-switch {
+  background: rgba(30, 30, 30, 0.42) !important;
+  border: 1px solid var(--glass-border-dark);
+}
+
+/* 导航栏玻璃化 */
+body.wallpaper-transparent #navbar > div {
+  backdrop-filter: blur(22px) saturate(170%);
+  -webkit-backdrop-filter: blur(22px) saturate(170%);
+  background: rgba(255, 255, 255, 0.42) !important;
+  border: 1px solid var(--glass-border-light);
+  border-top-color: transparent;
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: var(--glass-shadow);
+}
+
+:root.dark body.wallpaper-transparent #navbar > div {
+  background: rgba(30, 30, 30, 0.42) !important;
+  border: 1px solid var(--glass-border-dark);
+  border-top-color: transparent;
+  box-shadow: var(--glass-shadow-dark);
+}
+
+/* 滚动后导航栏增加阴影层次 */
+body.wallpaper-transparent #navbar.navbar-sticky-shadow > div {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+}
+
+:root.dark body.wallpaper-transparent #navbar.navbar-sticky-shadow > div {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* 文章正文区域玻璃化 */
+body.wallpaper-transparent #post-content,
+body.wallpaper-transparent #post-container,
+body.wallpaper-transparent .post-page-content {
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  background: rgba(255, 255, 255, 0.48) !important;
+  border: 1px solid var(--glass-border-light);
+  border-radius: var(--radius-large);
+  box-shadow: var(--glass-shadow);
+}
+
+:root.dark body.wallpaper-transparent #post-content,
+:root.dark body.wallpaper-transparent #post-container,
+:root.dark body.wallpaper-transparent .post-page-content {
+  background: rgba(30, 30, 30, 0.48) !important;
+  border: 1px solid var(--glass-border-dark);
+  box-shadow: var(--glass-shadow-dark);
+}
+
+/* 侧边栏小部件玻璃化 */
+body.wallpaper-transparent #left-sidebar .card-base,
+body.wallpaper-transparent #right-sidebar .card-base,
+body.wallpaper-transparent .widget-layout .card-base {
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+}
+
+/* 评论区域玻璃化 */
+body.wallpaper-transparent #post-comments {
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  background: rgba(255, 255, 255, 0.5) !important;
+  border: 1px solid var(--glass-border-light);
+}
+
+:root.dark body.wallpaper-transparent #post-comments {
+  background: rgba(30, 30, 30, 0.5) !important;
+  border: 1px solid var(--glass-border-dark);
+}
+
+/* 悬停时玻璃卡片轻微高亮 */
+body.wallpaper-transparent .card-base:hover,
+body.wallpaper-transparent .btn-card:hover {
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+
+:root.dark body.wallpaper-transparent .card-base:hover,
+:root.dark body.wallpaper-transparent .btn-card:hover {
+  background: rgba(45, 45, 45, 0.6) !important;
+}
+
+/* 保证玻璃化元素过渡平滑 */
+body.wallpaper-transparent .card-base,
+body.wallpaper-transparent .card-base-transparent,
+body.wallpaper-transparent .btn-card,
+body.wallpaper-transparent .dropdown-content,
+body.wallpaper-transparent .float-panel,
+body.wallpaper-transparent #navbar > div,
+body.wallpaper-transparent #post-content,
+body.wallpaper-transparent #post-comments {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    backdrop-filter 0.3s ease;
+}
+
