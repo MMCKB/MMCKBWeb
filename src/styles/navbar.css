@@ -35,8 +35,9 @@
 #navbar>div {
     background-color: var(--card-bg);
     border: 1px solid transparent;
-    border-radius: 0 0 0.75rem 0.75rem;
+    border-radius: 1rem;
     backdrop-filter: blur(0);
+    margin: 0 1rem;
     @apply navbar-surface-transition;
 }
 
@@ -68,7 +69,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
     body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semi"]>div {
         backdrop-filter: blur(var(--navbar-glass-blur, 20px)) !important;
         background: color-mix(in oklch, var(--card-bg) calc(var(--opacity-55) * 100%), transparent) !important;
-        border-radius: 0 0 0.75rem 0.75rem !important;
+        border-radius: 1rem !important;
         box-shadow: var(--shadow-navbar) !important;
     }
 
@@ -78,7 +79,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
         backdrop-filter: blur(0) !important;
         background: transparent !important;
         border: none !important;
-        border-radius: 0 !important;
+        border-radius: 1rem !important;
         box-shadow: none !important;
     }
 
@@ -88,7 +89,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
         backdrop-filter: blur(0) !important;
         background: transparent !important;
         border: none !important;
-        border-radius: 0 0 0.75rem 0.75rem !important;
+        border-radius: 1rem !important;
         box-shadow: none !important;
     }
 
@@ -97,7 +98,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
     body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"].scrolled>div {
         backdrop-filter: blur(var(--navbar-glass-blur, 20px)) !important;
         background: color-mix(in oklch, var(--card-bg) calc(var(--opacity-55) * 100%), transparent) !important;
-        border-radius: 0 0 0.75rem 0.75rem !important;
+        border-radius: 1rem !important;
         box-shadow: var(--shadow-navbar) !important;
     }
 }
@@ -113,7 +114,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
     body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semi"][data-is-home="true"]>div {
         backdrop-filter: blur(var(--navbar-glass-blur, 20px)) !important;
         background: color-mix(in oklch, var(--card-bg) calc(var(--opacity-55) * 100%), transparent) !important;
-        border-radius: 0 0 0.75rem 0.75rem !important;
+        border-radius: 1rem !important;
         box-shadow: var(--shadow-navbar) !important;
     }
 
@@ -123,7 +124,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
         backdrop-filter: blur(0) !important;
         background: transparent !important;
         border: none !important;
-        border-radius: 0 !important;
+        border-radius: 1rem !important;
         box-shadow: none !important;
     }
 
@@ -133,7 +134,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
         backdrop-filter: blur(0) !important;
         background: transparent !important;
         border: none !important;
-        border-radius: 0 0 0.75rem 0.75rem !important;
+        border-radius: 1rem !important;
         box-shadow: none !important;
     }
 
@@ -142,7 +143,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
     body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"][data-is-home="true"].scrolled>div {
         backdrop-filter: blur(var(--navbar-glass-blur, 20px)) !important;
         background: color-mix(in oklch, var(--card-bg) calc(var(--opacity-55) * 100%), transparent) !important;
-        border-radius: 0 0 0.75rem 0.75rem !important;
+        border-radius: 1rem !important;
         box-shadow: var(--shadow-navbar) !important;
     }
 }
@@ -220,11 +221,12 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
 }
 
 /* ============================================
- * 移动端去掉底部圆角
+ * 移动端悬浮导航栏（小屏使用更小的边距与圆角）
  * ============================================ */
 @media (max-width: 767px) {
     #navbar>div {
-        border-radius: 0 !important;
+        margin: 0 0.75rem;
+        border-radius: 0.875rem !important;
     }
 
     /* 覆盖 banner 模式 semi / semifull 下的圆角 */
@@ -234,7 +236,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
     body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"][data-is-home="true"]>div,
     #wallpaper-wrapper~* #navbar[data-transparent-mode="semifull"][data-is-home="true"].scrolled>div,
     body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"][data-is-home="true"].scrolled>div {
-        border-radius: 0 !important;
+        border-radius: 0.875rem !important;
     }
 }
 
@@ -269,7 +271,10 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"][data-enab
 
 
 
-/* 调整下拉菜单和浮动面板的背景透明度 */
+/* ============================================
+ * 下拉菜单和浮动面板毛玻璃化
+ * 按钮展开后面板使用 backdrop-filter 模糊与半透明背景
+ * ============================================ */
 /* 亮色主题 */
 #wallpaper-wrapper~* .dropdown-content,
 #wallpaper-wrapper~* .float-panel,
@@ -277,9 +282,21 @@ body:has(#wallpaper-wrapper) .dropdown-content,
 body:has(#wallpaper-wrapper) .float-panel,
 body.wallpaper-transparent .dropdown-content,
 body.wallpaper-transparent .float-panel {
-    background: rgba(255, 255, 255, 0.95) !important;
-    box-shadow: var(--shadow-md) !important;
-    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    backdrop-filter: var(--glass-blur);
+    background: rgba(255, 255, 255, 0.45) !important;
+    box-shadow: var(--glass-shadow) !important;
+    border: 1px solid var(--glass-border-light) !important;
+}
+
+@supports (-webkit-backdrop-filter: blur(1px)) {
+    #wallpaper-wrapper~* .dropdown-content,
+    #wallpaper-wrapper~* .float-panel,
+    body:has(#wallpaper-wrapper) .dropdown-content,
+    body:has(#wallpaper-wrapper) .float-panel,
+    body.wallpaper-transparent .dropdown-content,
+    body.wallpaper-transparent .float-panel {
+        -webkit-backdrop-filter: var(--glass-blur);
+    }
 }
 
 /* 暗色主题 */
@@ -289,9 +306,9 @@ body.wallpaper-transparent .float-panel {
 :root.dark body:has(#wallpaper-wrapper) .float-panel,
 :root.dark body.wallpaper-transparent .dropdown-content,
 :root.dark body.wallpaper-transparent .float-panel {
-    background: rgba(23, 23, 23, 0.95) !important;
-    box-shadow: var(--shadow-md) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: rgba(30, 30, 30, 0.45) !important;
+    box-shadow: var(--glass-shadow-dark) !important;
+    border: 1px solid var(--glass-border-dark) !important;
 }
 
 /* ============================================
