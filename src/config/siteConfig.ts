@@ -221,7 +221,7 @@ export const siteConfig: SiteConfig = {
 		//   // TMDB API 密钥
 		//   apiKey: "your_tmdb_api_key",
 		//   // TMDB 列表 ID
-		//   listId: "your_list_id",
+		//   listId: "your_tmdb_id",
 		// },
 	},
 
