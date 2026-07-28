@@ -35,7 +35,7 @@
 #navbar>div {
     background-color: var(--card-bg);
     border: 1px solid transparent;
-    border-radius: 1rem;
+    border-radius: 9999px;
     backdrop-filter: blur(0);
     margin: 0 1rem;
     @apply navbar-surface-transition;
@@ -69,7 +69,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
     body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semi"]>div {
         backdrop-filter: blur(var(--navbar-glass-blur, 20px)) !important;
         background: color-mix(in oklch, var(--card-bg) calc(var(--opacity-55) * 100%), transparent) !important;
-        border-radius: 1rem !important;
+        border-radius: 9999px !important;
         box-shadow: var(--shadow-navbar) !important;
     }
 
@@ -79,7 +79,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
         backdrop-filter: blur(0) !important;
         background: transparent !important;
         border: none !important;
-        border-radius: 1rem !important;
+        border-radius: 9999px !important;
         box-shadow: none !important;
     }
 
@@ -89,7 +89,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
         backdrop-filter: blur(0) !important;
         background: transparent !important;
         border: none !important;
-        border-radius: 1rem !important;
+        border-radius: 9999px !important;
         box-shadow: none !important;
     }
 
@@ -98,7 +98,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
     body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"].scrolled>div {
         backdrop-filter: blur(var(--navbar-glass-blur, 20px)) !important;
         background: color-mix(in oklch, var(--card-bg) calc(var(--opacity-55) * 100%), transparent) !important;
-        border-radius: 1rem !important;
+        border-radius: 9999px !important;
         box-shadow: var(--shadow-navbar) !important;
     }
 }
@@ -114,7 +114,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
     body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semi"][data-is-home="true"]>div {
         backdrop-filter: blur(var(--navbar-glass-blur, 20px)) !important;
         background: color-mix(in oklch, var(--card-bg) calc(var(--opacity-55) * 100%), transparent) !important;
-        border-radius: 1rem !important;
+        border-radius: 9999px !important;
         box-shadow: var(--shadow-navbar) !important;
     }
 
@@ -124,7 +124,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
         backdrop-filter: blur(0) !important;
         background: transparent !important;
         border: none !important;
-        border-radius: 1rem !important;
+        border-radius: 9999px !important;
         box-shadow: none !important;
     }
 
@@ -134,7 +134,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
         backdrop-filter: blur(0) !important;
         background: transparent !important;
         border: none !important;
-        border-radius: 1rem !important;
+        border-radius: 9999px !important;
         box-shadow: none !important;
     }
 
@@ -143,7 +143,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
     body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"][data-is-home="true"].scrolled>div {
         backdrop-filter: blur(var(--navbar-glass-blur, 20px)) !important;
         background: color-mix(in oklch, var(--card-bg) calc(var(--opacity-55) * 100%), transparent) !important;
-        border-radius: 1rem !important;
+        border-radius: 9999px !important;
         box-shadow: var(--shadow-navbar) !important;
     }
 }
@@ -226,7 +226,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
 @media (max-width: 767px) {
     #navbar>div {
         margin: 0 0.75rem;
-        border-radius: 0.875rem !important;
+        border-radius: 9999px !important;
     }
 
     /* 覆盖 banner 模式 semi / semifull 下的圆角 */
@@ -236,7 +236,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
     body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"][data-is-home="true"]>div,
     #wallpaper-wrapper~* #navbar[data-transparent-mode="semifull"][data-is-home="true"].scrolled>div,
     body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"][data-is-home="true"].scrolled>div {
-        border-radius: 0.875rem !important;
+        border-radius: 9999px !important;
     }
 }
 
