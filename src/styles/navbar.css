@@ -37,7 +37,7 @@
     border: 1px solid transparent;
     border-radius: 9999px;
     backdrop-filter: blur(0);
-    margin: 1rem 1rem;
+    margin: 0.6rem 1rem;
     @apply navbar-surface-transition;
 }
 
@@ -225,7 +225,7 @@ body:has(#wallpaper-wrapper) #navbar[data-transparent-mode="semifull"]:not(.scro
  * ============================================ */
 @media (max-width: 767px) {
     #navbar>div {
-        margin: 1rem 0.75rem;
+        margin: 0.5rem 0.75rem;
         border-radius: 9999px !important;
     }
 
