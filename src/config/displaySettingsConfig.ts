@@ -23,7 +23,7 @@ export const displaySettingsConfig: DisplaySettingsConfig = {
 	// ── 壁纸 (Wallpaper) ──────────────────────────────────
 
 	// 壁纸模式切换开关
-	wallpaperModeSwitchable: false,
+	wallpaperModeSwitchable: true,
 
 	// 水波纹动画开关
 	wavesSwitchable: true,
